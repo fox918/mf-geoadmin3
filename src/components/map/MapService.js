@@ -531,7 +531,7 @@
             if (bodId.indexOf('lubis') !== -1) {
               wmsUrl = wmsUrl.replace('wms-bgdi0i.bgdi.admin.ch',
                              'wms.geo.admin.ch');
-
+              wmsUrl = wmsUrl.replace('http://', '//');
             }
 
             var wmsParams = {
