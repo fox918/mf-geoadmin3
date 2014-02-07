@@ -526,6 +526,14 @@
             var wmsUrl = gaUrlUtils.remove(
                 layer.wmsUrl, ['request', 'service', 'version'], true);
 
+            //FIXME:
+            //THIS IS A TEMPORARY FIX. DON'T PUT THIS INTO MASTER EVER!
+            if (bodId.indexOf('lubis') !== -1) {
+              wmsUrl = wmsUrl.replace('wms-bgdi0i.bgdi.admin.ch',
+                             'wms.geo.admin.ch');
+
+            }
+
             var wmsParams = {
               LAYERS: layer.wmsLayers,
               FORMAT: 'image/' + layer.format
