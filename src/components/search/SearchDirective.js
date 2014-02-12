@@ -198,7 +198,7 @@
                     return template;
                   },
                   remote: {
-                    url: gaUrlUtils.append(options.serviceUrl,
+                    url: gaUrlUtils.append(options.searchUrl,
                         'type=locations'),
                     beforeSend: function(jqXhr, settings) {
                        scope.$apply(function() {
@@ -268,7 +268,7 @@
                     return template;
                   },
                   remote: {
-                    url: options.serviceUrl + 'type=layers',
+                    url: options.searchUrl + 'type=layers',
                     beforeSend: function(jqXhr, settings) {
                       return !gaGetCoordinate(
                         map.getView().getProjection().getExtent(),

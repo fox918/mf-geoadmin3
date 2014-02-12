@@ -99,11 +99,4 @@
     'ga_measure_controller'
   ]);
 
-  module.config(function($translateProvider, gaGlobalOptions) {
-    $translateProvider.useStaticFilesLoader({
-      prefix: gaGlobalOptions.version + 'locales/',
-      suffix: '.json'
-    });
-  });
-
 })();
