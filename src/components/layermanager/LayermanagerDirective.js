@@ -20,6 +20,19 @@
       return items.slice().reverse();
     };
   });
+  /**
+   * Filter for discarding unplausible timestamp year. A layer with
+   * timestamp of '99991231' is used to combine all layers.
+   * This is a temporay solution, and has to be reverted once we
+   * switch back from WMTS to WMS source.
+   */
+  module.filter('gaPlausibleYear', function() {
+      return function(input) {
+        var out = (input < 30000000) ? input : '';
+
+        return out;
+      }
+  });
 
   module.directive('gaLayermanager',
       function(gaLayers, gaLayerMetadataPopup, gaBrowserSniffer,
